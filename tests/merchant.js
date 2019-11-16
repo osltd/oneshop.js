@@ -89,5 +89,5 @@ let tests = {
 };
 
 // execute specific test
-tests[31]().then(result => console.log(result)).catch(error => console.log(error));
+tests[0]().then(result => console.log(result)).catch(error => console.log(error));
 

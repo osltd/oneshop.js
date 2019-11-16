@@ -1,7 +1,8 @@
 const request = require('request');
 const qs      = require('qs');
+const env     = require('browser-or-node');
 
-const makeRequest = (method, url, body, query, tokens) => new Promise((resolve, reject) => {
+const nodeRequest = (method, url, body, query, tokens) => new Promise((resolve, reject) => {
     // setup payload
     let payload = {
         url    : url + (Object.keys(query || {}).length ? `?${qs.stringify(query)}` : ""),
@@ -53,28 +54,74 @@ const makeRequest = (method, url, body, query, tokens) => new Promise((resolve, 
 });
 
 
+const browserRequest = (method, url, body, query) => new Promise((resolve, reject) => {
+    // 
+    if((url || "").startsWith("https://api.oneshop.cloud")) throw "You should not use https://api.oneshop.cloud to call Oneshop API, it's very dangerous if you expose the credentials of your mall.";
+    // set payload
+    let payload = {
+        method  : method,
+        headers : {
+            "Content-Type" : "application/json"
+        }
+    }
+    // has body?
+    if(/^POST|PUT$/i.test(method)){
+        payload.body = JSON.stringify(body);
+    };
+    // make request
+    fetch(url + (Object.keys(query || {}).length ? `?${qs.stringify(query)}` : ""), payload)
+    // parse json
+    .then(response => response.json())
+    // 
+    .then(result => resolve(/^GET$/i.test(method) && Array.isArray((result.data || {}).rows) ? result.data.rows : (result.data || (result.messages || true))))
+    // error?
+    .catch(error => {
+        // setup error message container
+        let messages = [];
+        // process error
+        if(typeof error == 'string'){
+            // setup message container
+            messages.push(error);
+        } else if(typeof error == 'array') {
+            messages = messages.concat(error).filter(n => n);
+        }
+        reject({
+            code    : (response || {}).statusCode || 500,
+            message : messages
+        });
+    });
+});
+
+// call
+const call = (method, url, body, query, tokens) => {
+    if(env.isNode && !url.startsWith('https://api.oneshop.cloud')){
+        throw "The API endpoint is not allow to change under Node environment."
+    }
+    return env.isNode ? nodeRequest(method, url, body, query, tokens) : browserRequest(method, url, body, query); 
+}
+
 module.exports =  {
     /**
     * @param {url}
     * @param {body}
     * @param {user,pass}
     */
-    post   : (url, body, credentials) => makeRequest('POST', url, body, {}, credentials),
+    post   : (url, body, credentials) => call('POST', url, body, {}, credentials),
     /**
     * @param {url}
     * @param {query}
     * @param {user,pass}
     */
-    get    : (url, query, credentials) => makeRequest('GET', url, {}, query, credentials),
+    get    : (url, query, credentials) => call('GET', url, {}, query, credentials),
     /**
     * @param {url}
     * @param {body}
     * @param {user,pass}
     */
-    put    : (url, body, credentials) => makeRequest('PUT', url, body, {}, credentials),
+    put    : (url, body, credentials) => call('PUT', url, body, {}, credentials),
     /**
     * @param {url}
     * @param {user,pass}
     */
-    delete : (url, credentials) => makeRequest('DELETE', url, {}, {}, credentials)
+    delete : (url, credentials) => call('DELETE', url, {}, {}, credentials)
 };

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/osltd/oneshop.js#readme",
   "dependencies": {
+    "browser-or-node": "^1.2.1",
     "dotenv": "^8.2.0",
     "qs": "^6.9.1",
     "request": "^2.88.0"

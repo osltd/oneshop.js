@@ -55,7 +55,7 @@ class Oneshop {
      * @param {*} baseURL 
      */
     setShopDomain(domain){
-        if(!/^(http(s)?:\/\/)[a-z1-9\.]$/i.test(domain)){
+        if(!/^(http(s)?\:\/\/)?[a-z1-9\.]+$/i.test(domain)){
             throw 'Please enter the domain only, path and symbols is forbidden, except "."'
         }
         this.baseURL = /^http(s)?/i.test(domain) ? `${domain}/api` : `https://${domain}/api`;
