@@ -1,0 +1,28 @@
+{
+  "name": "oneshop",
+  "version": "1.0.0",
+  "description": "Oneshop Javascript SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osltd/oneshop.js.git"
+  },
+  "keywords": [
+    "oneshop",
+    "sdk"
+  ],
+  "author": "Oneshop Limited",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osltd/oneshop.js/issues"
+  },
+  "homepage": "https://github.com/osltd/oneshop.js#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "qs": "^6.9.1",
+    "request": "^2.88.0"
+  }
+}
