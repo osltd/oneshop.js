@@ -68,28 +68,28 @@ const browserRequest = (method, url, body, query) => new Promise((resolve, rejec
     if(/^POST|PUT$/i.test(method)){
         payload.body = JSON.stringify(body);
     };
+    // set status code
+    let statusCode = 200;
     // make request
     fetch(url + (Object.keys(query || {}).length ? `?${qs.stringify(query)}` : ""), payload)
     // parse json
-    .then(response => response.json())
+    .then(response => {
+        statusCode = response.status;
+        return response.json()
+    })
     // 
-    .then(result => resolve(/^GET$/i.test(method) && Array.isArray((result.data || {}).rows) ? result.data.rows : (result.data || (result.messages || true))))
-    // error?
-    .catch(error => {
-        // setup error message container
-        let messages = [];
-        // process error
-        if(typeof error == 'string'){
-            // setup message container
-            messages.push(error);
-        } else if(typeof error == 'array') {
-            messages = messages.concat(error).filter(n => n);
+    .then(result => new Promise((_resolve, _reject) => {
+        if(statusCode <= 200){
+            _resolve(/^GET$/i.test(method) && Array.isArray((result.data || {}).rows) ? result.data.rows : (result.data || (result.messages || true)))
+        } else {
+            _reject({
+                code     : statusCode,
+                messages : result.messages || result.data || 'unexpected.error'
+            });
         }
-        reject({
-            code    : (response || {}).statusCode || 500,
-            message : messages
-        });
-    });
+    }))
+    // error?
+    .catch(reject);
 });
 
 // call
