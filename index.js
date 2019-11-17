@@ -50,15 +50,9 @@ class Oneshop {
     }
 
 
-    /**
-     * Set Base URL of the SDK
-     * @param {*} baseURL 
-     */
-    setShopDomain(domain){
-        if(!/^(http(s)?\:\/\/)?[a-z1-9\.]+$/i.test(domain)){
-            throw 'Please enter the domain only, path and symbols is forbidden, except "."'
-        }
-        this.baseURL = /^http(s)?/i.test(domain) ? `${domain}/api` : `https://${domain}/api`;
+    // Using web store of Oneshop
+    setWebMode(){
+        this.baseURL = "/api";
         // refresh modules
         this.loadModules();
     }
@@ -68,7 +62,8 @@ class Oneshop {
      * Returns the Base URL of Oneshop API Endpoint
      */
     getBaseURL(){
-        return this.baseURL || 'https://api.oneshop.cloud';
+        console.log(this.baseURL != undefined ?  this.baseURL : 'https://api.oneshop.cloud');
+        return this.baseURL != undefined ?  this.baseURL : 'https://api.oneshop.cloud';
     }
 
 }
