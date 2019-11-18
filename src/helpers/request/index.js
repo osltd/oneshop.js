@@ -1,8 +1,7 @@
 const request = require('request');
 const qs      = require('qs');
-const env     = require('browser-or-node');
 
-const nodeRequest = (method, url, body, query, tokens) => new Promise((resolve, reject) => {
+const makeRequest = (method, url, body, query, tokens) => new Promise((resolve, reject) => {
     // setup payload
     let payload = {
         url    : url + (Object.keys(query || {}).length ? `?${qs.stringify(query)}` : ""),
@@ -54,51 +53,6 @@ const nodeRequest = (method, url, body, query, tokens) => new Promise((resolve, 
 });
 
 
-const browserRequest = (method, url, body, query) => new Promise((resolve, reject) => {
-    // 
-    if((url || "").startsWith("https://api.oneshop.cloud")) throw "You should not use https://api.oneshop.cloud to call Oneshop API, it's very dangerous if you expose the credentials of your mall.";
-    // set payload
-    let payload = {
-        method  : method,
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    }
-    // has body?
-    if(/^POST|PUT$/i.test(method)){
-        payload.body = JSON.stringify(body);
-    };
-    // set status code
-    let statusCode = 200;
-    // make request
-    fetch(url + (Object.keys(query || {}).length ? `?${qs.stringify(query)}` : ""), payload)
-    // parse json
-    .then(response => {
-        statusCode = response.status;
-        return response.json()
-    })
-    // 
-    .then(result => new Promise((_resolve, _reject) => {
-        if(statusCode <= 200){
-            _resolve(/^GET$/i.test(method) && Array.isArray((result.data || {}).rows) ? result.data.rows : (result.data || (result.messages || true)))
-        } else {
-            _reject({
-                code     : statusCode,
-                messages : result.messages || result.data || 'unexpected.error'
-            });
-        }
-    }))
-    // error?
-    .catch(reject);
-});
-
-// call
-const call = (method, url, body, query, tokens) => {
-    if(env.isNode && !url.startsWith('https://api.oneshop.cloud')){
-        throw "The API endpoint is not allow to change under Node environment."
-    }
-    return env.isNode ? nodeRequest(method, url, body, query, tokens) : browserRequest(method, url, body, query); 
-}
 
 module.exports =  {
     /**
@@ -106,22 +60,22 @@ module.exports =  {
     * @param {body}
     * @param {user,pass}
     */
-    post   : (url, body, credentials) => call('POST', url, body, {}, credentials),
+    post   : (url, body, credentials) => makeRequest('POST', url, body, {}, credentials),
     /**
     * @param {url}
     * @param {query}
     * @param {user,pass}
     */
-    get    : (url, query, credentials) => call('GET', url, {}, query, credentials),
+    get    : (url, query, credentials) => makeRequest('GET', url, {}, query, credentials),
     /**
     * @param {url}
     * @param {body}
     * @param {user,pass}
     */
-    put    : (url, body, credentials) => call('PUT', url, body, {}, credentials),
+    put    : (url, body, credentials) => makeRequest('PUT', url, body, {}, credentials),
     /**
     * @param {url}
     * @param {user,pass}
     */
-    delete : (url, credentials) => call('DELETE', url, {}, {}, credentials)
+    delete : (url, credentials) => makeRequest('DELETE', url, {}, {}, credentials)
 };
