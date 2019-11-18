@@ -1,12 +1,18 @@
-The Oneshop Javascript SDK, provides convenient way to access to the Oneshop API from both client-side and server-side JavaScript.
+# Oneshop JavaScript SDK for Node
+Provides convenient way to access to the Oneshop API from both client-side and server-side JavaScript.
 
-# Documentation
-See the [API docs]:https://docs.oneshop.dev for JavaScript SDK.
+## Documentation
+See the [Oneshop Documentation](https://docs.oneshop.dev) for JavaScript SDK.
 
-# Installation
+## Installation
 `npm i oneshop`
 
-# Usage (Server-side)
+## Usage (Server-side)
+
+### credentials
+
+You may update the credential anytime to fit your usage. see the example below.
+
 ```javascript
 const oneshop = require('oneshop');
 // init oneshop
@@ -18,38 +24,65 @@ os.setCredentials({
         id : process.env.MALL_USER, 
         token : process.env.MALL_SECRET
     },
-    // merchant is required for calling merchant API
     merchant : {
-        id : process.env.MERCHANT_USER, 
-        token : process.env.MERCHANT_SECRET
-    },
-    // consumer is required for calling consumer API
-    consumer : {
-        id : process.env.CONCUMER_USER, 
-        token : process.env.CONCUMER_SECRET
-    },
-    // creator is required for calling creator API
-    creator : {
-        id : process.env.CREATOR_USER, 
-        token : process.env.CREATOR_SECRET
+        // merchant id can be obtained from mall.session.create() too
+        // ensure the account owns at least one shop
+        id : "Tm7xJuEHISPrtwQXWnaLtIPgpEYNJEqgq9gMdPmDClIV49jf",
+        token : process.env.MALL_SECRET
     }
 });
 
-// get profile
-os.consumer.profile.get()
-.then(result => console.log(result))
-.catch(error => console.log(error));
+// update consumer credential
+os.setCredentials({
+    consumer : {
+        // consumer id can be obtained from mall.session.create()
+        id : "q9gMdPmDClIV8ZwxcGXy5s6m8LfECdkaccp6yqmIbMuk8jb1",
+        token : process.env.MALL_SECRET
+    }
+});
+
 ```
 
-# Usage (call from browser)
+### Example (User login and get profile)
+
 ```javascript
 const oneshop = require('oneshop');
 // init oneshop
 let os = new oneshop();
-// set web mode
-os.setWebMode();
-// get profile
-os.consumer.profile.get()
+// set credentials
+os.setCredentials({
+    // mall is required for calling mall API
+    mall:{ 
+        id : process.env.MALL_USER, 
+        token : process.env.MALL_SECRET
+    }
+});
+
+// login 
+os.mall.session.create({
+    email  : 'peter.chan@yopmail.com',
+    passwd : '123456789'
+})
+// got session token
+.then(tokens => Promise.resolve(tokens[0].token))
+// set consumer credential (Store the token at somewhere and reuse it, unless it's expired.)
+.then(token => os.setCredentials({ 
+    consumer : { 
+        id    : token, 
+        token : process.env.MALL_SECRET 
+    }
+}))
+// get consumer profile
+.then(() => os.consumer.profile.get())
+// got profile
 .then(result => console.log(result))
+// error?
 .catch(error => console.log(error));
 ```
+
+## Bug/Feature request?
+Feel free to open an issue :)
+
+## Enquiry
+devops@oneshop.team
+
