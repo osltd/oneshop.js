@@ -49,20 +49,10 @@ class Oneshop {
         };
     }
 
-
-    // Using web store of Oneshop
-    setWebMode(){
-        this.baseURL = "/api";
-        // refresh modules
-        this.loadModules();
-    }
-
-
     /**
      * Returns the Base URL of Oneshop API Endpoint
      */
     getBaseURL(){
-        console.log(this.baseURL != undefined ?  this.baseURL : 'https://api.oneshop.cloud');
         return this.baseURL != undefined ?  this.baseURL : 'https://api.oneshop.cloud';
     }
 
