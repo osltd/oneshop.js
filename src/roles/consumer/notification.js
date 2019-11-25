@@ -23,6 +23,17 @@ class Notification extends Role {
     /**
      * Update notification
      * @param {String} status[active][deleted]
+     * 
+     * Examples:
+     * 
+     *  // active the notification
+     * 
+     *  os.consumer.notification.update(5321,'active') 
+     * 
+     *  // cancel the notification
+     * 
+     *  os.consumer.notification.update(5321,'deleted')
+     * 
      */
     update(notificationId, status){
         return this.request.put(`${this.baseURL}/notifications/${notificationId}`, {status:status}, this.credentials);

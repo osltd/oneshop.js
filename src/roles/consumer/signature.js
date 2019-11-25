@@ -15,6 +15,10 @@ class Signature extends Role {
      * Retrieve merchandises
      * @param {String} ids
      * @param {String} extension
+     * 
+     * Examples:
+     *  os.consumeer.signature.create('ppts')
+     * 
      */
     create(extension){
         return this.request.post(`${this.baseURL}/signatures`, {extension : extension}, this.credentials);

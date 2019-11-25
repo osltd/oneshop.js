@@ -15,6 +15,10 @@ class Feed extends Role {
      * Set reaction for feed by id
      * @param {Integer} feedId 
      * @param {String} reaction love,hate,sad
+     * 
+     * Examples:
+     *  os.consumer.feed.react(2123,'love')
+     * 
      */
     react(feedId, reaction){
         return this.request.put(`${this.baseURL}/articles/${feedId}`, {type:reaction}, this.credentials);

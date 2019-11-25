@@ -15,6 +15,10 @@ class Repository extends Role {
      * Fetch user repositories
      * @param {Object} query
      * @param {Integer} query[page]
+     * 
+     * Examples:
+     *  os.consumer.repository.get({page:1})
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/repositories`, query || {}, this.credentials);
