@@ -13,10 +13,24 @@ class Voucher extends Role {
 
     /**
      * Retrieve mall vouchers
-     * @param {String} codes (Required)
-     * @param {String} malls
-     * @param {String} shops
-     * @param {Integer} page
+     * @param {Object} query
+     * @param {String} query[codes] (Required)
+     * @param {String} query[malls]
+     * @param {String} query[shops]
+     * @param {Integer} query[page]
+     * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL vouchers (coupons) form all mall
+     * 
+     *  os.mall.voucher.get({codes:'ONESHOP10OFF',page:1}) 
+     * 
+     *  // Get vouchers (coupons) with filters from all mall
+     * 
+     *  os.mall.voucher.get({malls:'321',shops:'533',codes:'ONESHOP10OFF',page:1})
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/malls/${this.credentials.user}/vouchers`, query || {}, this.credentials);
