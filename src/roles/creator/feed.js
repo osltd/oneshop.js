@@ -95,7 +95,7 @@ class Feed extends Role {
      *      },
      * 
      *      // shop_id:time
-     *      shops:{327:'2019-10-01T00:10:10Z'}
+     *      shops:{327:'2019-10-01T00:10:10.000Z'}
      *  })
      * 
      * 
