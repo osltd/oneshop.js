@@ -20,6 +20,7 @@ class Project extends Role {
      * @param {String} context[src_dirname]
      * 
      * Examples:
+     * 
      *  os.consumer.project.update(1234,
      *  {test_branch:'dev',prod_branch:'prod',src_dirname:'test_repo',repo_url:'https://github.com/testproject/test.git'})
      * 

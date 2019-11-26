@@ -21,6 +21,19 @@ class Backlog extends Role {
      * @param {String} query[shops]
      * @param {String} query[keywords]
      * @param {String} query[permission]
+     * 
+     * Examples:
+     *  
+     *  // ALL filtering value are optional
+     * 
+     *  // Retrieve ALL products
+     * 
+     *  os.creator.commodity.get() 
+     * 
+     *  // Retrieve some products with filtering
+     * 
+     *  os.creator.commodity.get({ids:'1763,2845,411',locate:'zh_HK',type:'PHYSICAL',shop:'4333',keywords:'love',permission:'VIEWER'}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/commodities`, query || {}, this.credentials);

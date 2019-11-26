@@ -52,6 +52,7 @@ class Business extends Role {
      * @param {String} info[icon]
      * 
      * Examples:
+     * 
      *  os.creator.business.create({
      *  channel:1233,
      *  name:'Shop Test Channel',

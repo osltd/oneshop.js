@@ -15,6 +15,7 @@ class Profile extends Role {
      * Fetch user profile
      * 
      * Examples:
+     * 
      *  os.consumer.profile.get()
      * 
      */
@@ -31,6 +32,7 @@ class Profile extends Role {
      * @param {String} profile[confpasswd]
      * 
      * Examples:
+     * 
      *  os.consumer.profile.update(
      *  passwd:'IGoToSchoolByBus',
      *  confpasswd:'IGoToSchoolByBus',

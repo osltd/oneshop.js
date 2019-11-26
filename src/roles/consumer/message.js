@@ -38,6 +38,7 @@ class Message extends Role {
      * @param {Integer} query[page]
      * 
      * Examples:
+     * 
      *  os.consumer.message.get('2123',{page:1})
      * 
      */
@@ -53,6 +54,7 @@ class Message extends Role {
      * @param {String} context[attachments]
      * 
      * Examples:
+     * 
      *  os.consumer.message.send('2123',{content:'Hi, I am a man.',attachment:'https://assets.oneshop.cloud/..png'})
      * 
      */

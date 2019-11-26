@@ -17,6 +17,7 @@ class Repository extends Role {
      * @param {Integer} query[page]
      * 
      * Examples:
+     * 
      *  os.consumer.repository.get({page:1})
      * 
      */

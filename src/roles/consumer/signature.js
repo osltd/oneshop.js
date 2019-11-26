@@ -17,6 +17,7 @@ class Signature extends Role {
      * @param {String} extension
      * 
      * Examples:
+     * 
      *  os.consumeer.signature.create('ppts')
      * 
      */

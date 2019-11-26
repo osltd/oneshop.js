@@ -17,6 +17,7 @@ class Feed extends Role {
      * @param {String} reaction love,hate,sad
      * 
      * Examples:
+     * 
      *  os.consumer.feed.react(2123,'love')
      * 
      */

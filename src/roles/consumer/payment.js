@@ -64,6 +64,7 @@ class Payment extends Role {
      * @param {Integer} query[page]
      * 
      * Examples:
+     * 
      *  os.consumer.payment.get({merchants:'2ec37564bcad2343edacc',page:1})
      * 
      */

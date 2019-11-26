@@ -45,6 +45,7 @@ class Credential extends Role {
      * @param {Integer} credentialId 
      * 
      * Example:
+     * 
      *  os.consumer.credential.delete(2123)
      * 
      */
