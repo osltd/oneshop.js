@@ -14,6 +14,11 @@ class Backlog extends Role {
 
     /**
      * Retrieve backlog's of user
+     * 
+     * Examples:
+     * 
+     *  os.creator.backlog.get()
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/backlogs`, query || {}, this.credentials);

@@ -13,12 +13,27 @@ class Article extends Role {
 
     /**
      * Retrieve mall articles
-     * @param {String} ids
-     * @param {String} keywords
-     * @param {String} tags
-     * @param {String} shops
-     * @param {String} statuses
-     * @param {Integer} page
+     * @param {Object} query 
+     * @param {String} query[ids]
+     * @param {String} query[keywords]
+     * @param {String} query[tags]
+     * @param {String} query[shops]
+     * @param {String} query[status]
+     * @param {Integer} query[page]
+     * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL articles form your own mall
+     * 
+     *  os.mall.article.get() 
+     * 
+     *  // Get articles with filters from your own mall
+     * 
+     *  os.mall.article.get({ids:'1743,293,6652',keywords:'love',tags:'tag1,tag2',
+     *  shops:'522',status:'PUBLISHED',page:1})
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/articles`, query || {}, this.credentials);

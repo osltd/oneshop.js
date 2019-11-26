@@ -13,13 +13,28 @@ class Merchandise extends Role {
 
     /**
      * Retrieve merchandises
-     * @param {String} ids
-     * @param {String} shops
-     * @param {String} skus
-     * @param {String} tags
-     * @param {String} locale
-     * @param {String} keywords
-     * @param {Integer} page
+     * @param {Object} query
+     * @param {String} query[ids]
+     * @param {String} query[shops]
+     * @param {String} query[skus]
+     * @param {String} query[tags]
+     * @param {String} query[locale]
+     * @param {String} query[keywords]
+     * @param {Integer} query[page]
+     * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL merchandises form your own mall
+     * 
+     *  os.mall.merchandise.get({page:1}) 
+     * 
+     *  // Get specified merchandises with filters form your own mall
+     * 
+     *  os.mall.merchandise.get({ids:'43,54,123',shops:'443,121,93',skus:'tk_1',tags:'tag1,tag2'
+     *  locale:'en_US',keyword:'love',page:1}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/merchandises`, query || {}, this.credentials);

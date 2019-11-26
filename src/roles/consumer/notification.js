@@ -14,6 +14,11 @@ class Notification extends Role {
     
     /**
      * Fetch unhandled notifications
+     * 
+     * Examples:
+     * 
+     *  os.consumer.notification.get()
+     * 
      */
     get(){
         return this.request.get(`${this.baseURL}/notifications`, {}, this.credentials);

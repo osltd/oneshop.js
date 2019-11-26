@@ -13,6 +13,11 @@ class Session extends Role {
 
     /**
      * Logout by destroy session
+     * 
+     * Examples:
+     * 
+     *  os.consumer.session..destroy()
+     * 
      */
     destroy(){
         return this.request.delete(`${this.baseURL}/consumers/session`, {}, this.credentials);

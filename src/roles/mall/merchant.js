@@ -13,7 +13,20 @@ class Merchant extends Role {
 
     /**
      * Retrieve merchant profiles (Deprecated soon)
-     * @param {String} profile
+     * @param {Object} query
+     * @param {String} query[any_profile_field]
+     * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL merchants form your own mall
+     * 
+     *  os.mall.merchant.get({page:1}) 
+     * 
+     *  // Get specified merchants with filters (custom key value from profile) form your own mall
+     *  os.mall.merchant.get({gender:'M',page:1}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/merchants`, query || {}, this.credentials);
