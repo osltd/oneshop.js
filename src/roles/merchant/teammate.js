@@ -19,6 +19,18 @@ class Teammate extends Role {
      * @param {Object} query
      * @param {String} query[ids]
      * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL teammates form your shop
+     * 
+     *  os.merchant.teammate.get() 
+     * 
+     *  // Get teammates form your shop using filters
+     * 
+     *  os.merchant.teammate.get({ids:'211,332'}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/teammates`, query || {}, this.credentials)
@@ -33,6 +45,10 @@ class Teammate extends Role {
      * @param {String} context[username]
      * @param {String} context[scope] (admin|editor|developer)
      * 
+     * Examples:
+     * 
+     *  os.merchant.teammate.add({username:'OneShopUser',scope:'ADMIN'})
+     * 
      */
     add(context){
         return this.request.post(`${this.baseURL}/teammates`, context || {}, this.credentials)
@@ -45,6 +61,13 @@ class Teammate extends Role {
      * 
      * @param {Integer} teammateId 
      * @param {Object} context 
+     * @param {String} context[username]
+     * @param {String} context[scope] (admin|editor|developer)
+     * 
+     * Examples:
+     * 
+     *  os.merchant.teammate.update(211,{username:'OneShopUser',scope:'ADMIN'})
+     * 
      * 
      */
     update(teammateId, context){
@@ -57,6 +80,10 @@ class Teammate extends Role {
      * Delete teammate by id
      * 
      * @param {Integer} teammateId 
+     * 
+     * Examples:
+     * 
+     *  os.merchant.teammate.remove(332)
      * 
      */
     remove(teammateId){

@@ -18,7 +18,7 @@ class Feed extends Role {
      * @param {String} query[ids]
      * @param {String} query[locale] 
      * @param {String} query[tags]
-     * @param {String} query[status]
+     * @param {String} query[statuses]
      * @param {String} query[keywords]
      * @param {Object} query[section]
      * @param {String} query[ordering] 
@@ -33,7 +33,7 @@ class Feed extends Role {
      * 
      *  // Retrieve some feeds with filtering
      * 
-     *  os.creator.feed.get({ids:'2763,1845,641',locate:'zh_HK',tags:'tag1,tag2',status:'published',keywords:'love',ordering:'desc',
+     *  os.creator.feed.get({ids:'2763,1845,641',locate:'zh_HK',tags:'tag1,tag2',statuses:'published',keywords:'love',ordering:'desc',
      *  section:{title*:'AppleInc'}}) 
      * 
      */

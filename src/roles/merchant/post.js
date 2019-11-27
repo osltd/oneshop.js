@@ -19,6 +19,19 @@ class Post extends Role {
      * @param {String} query[end_time]
      * @param {String} query[ids]
      * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL posts form your shop
+     * 
+     *  os.merchant.post.get({page:1}) 
+     * 
+     *  // Get posts form your shop using filters
+     * 
+     *  os.merchant.post.get({start_time:'2019-10-10T12:30:00.000Z',
+     *  end_time:'2019-10-10T12:30:00.000Z',page:1}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/posts`, query || {}, this.credentials)

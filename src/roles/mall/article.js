@@ -18,7 +18,7 @@ class Article extends Role {
      * @param {String} query[keywords]
      * @param {String} query[tags]
      * @param {String} query[shops]
-     * @param {String} query[status]
+     * @param {String} query[statuses]
      * @param {Integer} query[page]
      * 
      * Examples:
@@ -32,7 +32,7 @@ class Article extends Role {
      *  // Get articles with filters from your own mall
      * 
      *  os.mall.article.get({ids:'1743,293,6652',keywords:'love',tags:'tag1,tag2',
-     *  shops:'522',status:'PUBLISHED',page:1})
+     *  shops:'522',statuses:'PUBLISHED',page:1})
      * 
      */
     get(query){

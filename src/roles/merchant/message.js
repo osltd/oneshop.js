@@ -20,6 +20,10 @@ class Message extends Role {
      * @param {Object} query
      * @param {Integer} query[page]
      * 
+     * Examples:
+     * 
+     *  os.merchant.message.enquirer({page:1})
+     * 
      */
     enquirer(query){
         return this.request.get(`${this.baseURL}/enquirers`, query || {}, this.credentials);
@@ -31,6 +35,10 @@ class Message extends Role {
      * @param {Integer} enquirerId
      * @param {Object} query
      * @param {Integer} query[page]
+     * 
+     * Examples:
+     * 
+     *  os.merchant.message.get(3234,{page:1})
      * 
      */
     get(enquirerId, query){
@@ -46,6 +54,11 @@ class Message extends Role {
      * @param {Object} context 
      * @param {String} context[context] (any string your want)
      * @param {String} context[attachments] (url seperated by comma)
+     * 
+     * Examples:
+     * 
+     *  os.merchant.message.get(3234,{context:'Hi, How are you?',
+     *  attachment:'https://asset.oneshop.cloud/..png,https://asset.oneshop.cloud/..png'})
      * 
      */
     send(enquirerId, context){

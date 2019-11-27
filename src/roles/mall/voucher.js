@@ -21,7 +21,7 @@ class Voucher extends Role {
      * 
      * Examples:
      * 
-     *  // ALL filtering value are optional
+     *  // ALL filtering value are optional (except'codes' value)
      * 
      *  // Get ALL vouchers (coupons) form all mall
      * 

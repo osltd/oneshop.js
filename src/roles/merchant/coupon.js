@@ -28,7 +28,7 @@ class Coupon extends Role {
      * 
      * @param {Object} context
      * @param {String} context[title]
-     * @param {String} context[code]
+     * @param {String} context[code] < only applicable to coupons with the 'usage' value PRE >
      * @param {String} context[usage] (pre, post, instant, shipment)
      * @param {Integer} context[quota]
      * @param {String} context[tags] (tag1,tag2)
@@ -38,6 +38,24 @@ class Coupon extends Role {
      * @param {Float} context[rate]
      * @param {Float} context[min_charge]
      * @param {Integer} context[min_items]
+     * 
+     * Examples:
+     * 
+     *  os.merchant.coupon.create({
+     *      title:'10% off discount coupon',
+     *      code:'ONEshop10',
+     *      quota:100,
+     *      rate:10,
+     *      type:'PERCENT',
+     *      usage:'PRE',
+     *      tags:'tag1,tag2,tag3',
+     *      min_charge:100.00,
+     *      min_items:5,
+     *      start_time:'2019-10-23T12:00:00.000Z',
+     *      end_time:'2019-12-31T12:00:00.000Z'
+     *  })
+     * 
+     * 
      */
     create(context){
         return this.request.post(`${this.baseURL}/coupons`, context || {}, this.credentials);
@@ -60,6 +78,23 @@ class Coupon extends Role {
      * @param {Float} context[rate]
      * @param {Float} context[min_charge]
      * @param {Integer} context[min_items]
+     * 
+     * Examples:
+     * 
+     *  os.merchant.coupon.update(243,{
+     *      title:'10% off discount coupon',
+     *      code:'ONEshop10',
+     *      quota:100,
+     *      rate:10,
+     *      type:'PERCENT',
+     *      usage:'PRE',
+     *      tags:'tag1,tag2,tag3',
+     *      min_charge:100.00,
+     *      min_items:5,
+     *      start_time:'2019-10-23T12:00:00.000Z',
+     *      end_time:'2019-12-31T12:00:00.000Z'
+     *  })
+     * 
      */
     update(couponId, context){
         return this.request.put(`${this.baseURL}/coupons/${couponId}`, context || {}, this.credentials);
@@ -69,6 +104,11 @@ class Coupon extends Role {
      * Delete coupon by id
      * 
      * @param {Integer} couponId 
+     * 
+     * Examples:
+     * 
+     *  os.merchant.coupon.delete(243)
+     * 
      */
     delete(couponId){
         return this.request.delete(`${this.baseURL}/coupons/${couponId}`, context || {}, this.credentials);
@@ -79,6 +119,11 @@ class Coupon extends Role {
      * Retrieve usage of specific coupon
      * 
      * @param {Integer} couponId 
+     * 
+     * Examples:
+     * 
+     *  os.merchant.coupon.usage(243)
+     * 
      */
     usage(couponId){
         return this.request.get(`${this.baseURL}/coupons/${couponId}/usages`, {}, this.credentials);
