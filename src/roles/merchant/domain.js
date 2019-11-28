@@ -15,9 +15,9 @@ class Domain extends Role {
      * Retrieve domains of your shop
      * 
      * @param {Object} query
-     * @param {String} query[stages] (e.g. production,development)
-     * @param {String} query[statuses] (ACTIVE, MAIN)
-     * @param {String} query[scopes] (MAIN, ALIAS)
+     * @param {String} query[stages] // custom define - e.g. production,development
+     * @param {String} query[statuses] // 'ACTIVE' | 'MAIN'
+     * @param {String} query[scopes] // 'MAIN' | 'ALIAS'
      * @param {Integer} query[page]
      * 
      * Examples:
@@ -44,7 +44,7 @@ class Domain extends Role {
      * 
      * @param {Object} context 
      * @param {String} context[name]
-     * @param {String} context[stage]
+     * @param {String} context[stage] // custom define - e.g. production,development
      * 
      * Examples:
      * 

@@ -60,7 +60,7 @@ class Payment extends Role {
     /**
      * Retrieve payment history
      * @param {Object} query
-     * @param {String} query[merchants]
+     * @param {String} query[merchants] // merchant id
      * @param {Integer} query[page]
      * 
      * Examples:

@@ -14,7 +14,7 @@ class Merchant extends Role {
     /**
      * Retrieve merchant profiles (Deprecated soon)
      * @param {Object} query
-     * @param {String} query[any_profile_field]
+     * @param {String} query[any_profile_field] // custom values you want e.g query[gender], query[phone]
      * 
      * Examples:
      * 

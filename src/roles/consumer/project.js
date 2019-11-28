@@ -32,7 +32,7 @@ class Project extends Role {
     /**
      * Retrieve themes
      * @param {Object} query
-     * @param {String} query[ids]
+     * @param {String} query[ids] // project id(s)
      * @param {String} query[page]
      * 
      * Examples :

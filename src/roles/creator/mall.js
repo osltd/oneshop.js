@@ -15,7 +15,7 @@ class Mall extends Role {
     /**
      * Retrieve mall's own by you
      * @param {Object} query
-     * @param {String} query[ids]
+     * @param {String} query[ids] // mall id(s)
      * @param {String} query[keywords]
      * @param {String} query[tags]
      * 

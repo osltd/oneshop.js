@@ -52,8 +52,8 @@ class Message extends Role {
      * 
      * @param {Integer} enquirerId
      * @param {Object} context 
-     * @param {String} context[context] (any string your want)
-     * @param {String} context[attachments] (url seperated by comma)
+     * @param {String} context[context] // any string your want
+     * @param {String} context[attachments] // url seperated by comma
      * 
      * Examples:
      * 

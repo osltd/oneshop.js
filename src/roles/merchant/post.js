@@ -17,7 +17,7 @@ class Post extends Role {
      * @param {Object} query 
      * @param {String} query[start_time]
      * @param {String} query[end_time]
-     * @param {String} query[ids]
+     * @param {String} query[ids] // post id(s)
      * 
      * Examples:
      * 

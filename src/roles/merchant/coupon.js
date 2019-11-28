@@ -28,13 +28,13 @@ class Coupon extends Role {
      * 
      * @param {Object} context
      * @param {String} context[title]
-     * @param {String} context[code] < only applicable to coupons with the 'usage' value PRE >
-     * @param {String} context[usage] (pre, post, instant, shipment)
+     * @param {String} context[code] // only applicable to coupons with the 'usage' value 'pre' 
+     * @param {String} context[usage] // 'pre' | 'post' | 'instant' | 'shipment'
      * @param {Integer} context[quota]
-     * @param {String} context[tags] (tag1,tag2)
+     * @param {String} context[tags] (e.g. tag1,tag2)
      * @param {String} context[start_time] (e.g. 2019-01-01T00:00:00Z)
      * @param {String} context[end_time] (e.g. 2019-01-01T00:00:00Z)
-     * @param {String} context[type] (fixed, percent)
+     * @param {String} context[type] // 'fixed' | 'percent'
      * @param {Float} context[rate]
      * @param {Float} context[min_charge]
      * @param {Integer} context[min_items]
@@ -68,13 +68,13 @@ class Coupon extends Role {
      * @param {Integer} couponId
      * @param {Object} context
      * @param {String} context[title]
-     * @param {String} context[code]
-     * @param {String} context[usage] (pre, post, instant, shipment)
+     * @param {String} context[code] // only applicable to coupons with the 'usage' value 'pre'
+     * @param {String} context[usage] // 'pre' | 'post' | 'instant' | 'shipment'
      * @param {Integer} context[quota]
-     * @param {String} context[tags] (tag1,tag2)
+     * @param {String} context[tags] (e.g. tag1,tag2)
      * @param {String} context[start_time] (e.g. 2019-01-01T00:00:00Z)
      * @param {String} context[end_time] (e.g. 2019-01-01T00:00:00Z)
-     * @param {String} context[type] (fixed, percent)
+     * @param {String} context[type] // 'fixed' | 'percent'
      * @param {Float} context[rate]
      * @param {Float} context[min_charge]
      * @param {Integer} context[min_items]

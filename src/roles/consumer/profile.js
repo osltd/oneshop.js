@@ -26,7 +26,7 @@ class Profile extends Role {
     /**
      * Update user profile
      * @param {Object} profile 
-     * @param {String} profile[any_field]
+     * @param {String} profile[any_field] // custom values you want e.g profile[gender], profile[phone]
      * @param {String} profile[tags]
      * @param {String} profile[passwd]
      * @param {String} profile[confpasswd]

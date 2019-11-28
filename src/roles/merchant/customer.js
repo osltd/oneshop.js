@@ -17,7 +17,7 @@ class Customer extends Role {
      * 
      * @param {Object} query
      * @param {Integer} query[page]
-     * @param {String} query[ids] (e.g 1234,5678)
+     * @param {String} query[ids] // customer (user) id(s) (e.g 1234,5678)
      * 
      * Examples:
      * 

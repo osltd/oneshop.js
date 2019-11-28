@@ -15,13 +15,13 @@ class Catalog extends Role {
      * Retrieve catalog of your shop
      * 
      * @param {Object} query
-     * @param {String} query[ids] < catalog id >
+     * @param {String} query[ids] // catalog id(s)
      * @param {String} query[page]
-     * @param {String} query[ownership] (self, others)
-     * @param {String} query[type] (physical, virtual)
-     * @param {String} query[tags] (shoes,clothes)
-     * @param {String} query[skus] (sneaker_blue_43, sneaker_blue_41)
-     * @param {String} query[keywords] (sneaker)
+     * @param {String} query[ownership] // 'self' | 'others'
+     * @param {String} query[type] // 'physical' | 'virtual'
+     * @param {String} query[tags] (e.g. shoes,clothes)
+     * @param {String} query[skus] (e.g. sneaker_blue_43, sneaker_blue_41)
+     * @param {String} query[keywords] (e.g. sneaker)
      * 
      * Examples:
      * 

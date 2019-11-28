@@ -27,7 +27,8 @@ class Message extends Role {
      * 
      */
     enquiries(query){
-        return this.request.get(`${this.baseURL}/signatures`, query || {}, this.credentials);
+        //return this.request.get(`${this.baseURL}/signatures`, query || {}, this.credentials);
+        return this.request.get(`${this.baseURL}/enquiries`, query || {}, this.credentials);
     }
 
     

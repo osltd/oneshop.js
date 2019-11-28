@@ -67,7 +67,7 @@ class Item extends Role {
      * Retrieve items of your shop
      * 
      * @param {Object} query
-     * @param {String} query[ids]
+     * @param {String} query[ids] // items id(s)
      * @param {Integer} query[page]
      * 
      *  // ALL filtering value are optional

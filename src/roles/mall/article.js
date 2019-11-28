@@ -14,11 +14,11 @@ class Article extends Role {
     /**
      * Retrieve mall articles
      * @param {Object} query 
-     * @param {String} query[ids]
+     * @param {String} query[ids] // article (post) id(s)
      * @param {String} query[keywords]
      * @param {String} query[tags]
      * @param {String} query[shops]
-     * @param {String} query[statuses]
+     * @param {String} query[statuses] // 'PUBLISHED' | 'SCHEDULE'
      * @param {Integer} query[page]
      * 
      * Examples:

@@ -28,8 +28,8 @@ class Shop extends Role {
 
     /**
      * Retrieve mall's shops
-     * @param {String} domain
-     * @param {String} ids
+     * @param {String} domain // shop domain
+     * @param {String} ids // shop id(s)
      * @param {Integer} page
      * 
      * Examples:

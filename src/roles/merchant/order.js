@@ -43,9 +43,9 @@ class Order extends Role {
      * 
      * @param {Object} query 
      * @param {Integer} query[page]
-     * @param {String} query[customers]
-     * @param {String} query[statuses]
-     * @param {String} query[ids]
+     * @param {String} query[customers] // customer (user) id(s)
+     * @param {String} query[statuses] // 'PENDING' | 'PAID' | 'PROCESSING' | 'SHIPPING' | 'COMPLETED' | 'CANCELLED'
+     * @param {String} query[ids] // order id(s)
      * 
      * Examples:
      * 
@@ -57,7 +57,7 @@ class Order extends Role {
      * 
      *  // Get orders form your shop using filters
      * 
-     *  os.merchant.order.get({consumers:'231,2232',statuses,page:1}) 
+     *  os.merchant.order.get({consumers:'231,2232',statuses:'PAID,PROCESSING',ids:'ac223c2354eedc2756e',page:1}) 
      * 
      */
     get(query){

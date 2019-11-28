@@ -48,7 +48,7 @@ class Consumer extends Role {
      * Retrieve mall consumers
      * @param {Object} query
      * @param {String} query[email] 
-     * @param {String} query[custom_profile_field]
+     * @param {String} query[custom_profile_field] // custom values you want e.g profile[gender], profile[phone]
      * @param {Integer} query[page]
      * 
      * Examples:

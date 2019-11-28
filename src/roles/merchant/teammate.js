@@ -62,7 +62,7 @@ class Teammate extends Role {
      * @param {Integer} teammateId 
      * @param {Object} context 
      * @param {String} context[username]
-     * @param {String} context[scope] (admin|editor|developer)
+     * @param {String} context[scope] // 'admin' | 'editor' | 'developer'
      * 
      * Examples:
      * 

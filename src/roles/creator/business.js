@@ -15,7 +15,7 @@ class Business extends Role {
     /**
      * Retrieve shops you own
      * @param {Object} query 
-     * @param {String} query[ids] 
+     * @param {String} query[ids]  // shop id(s)
      * @param {String} query[tags]
      * 
      * Examples:

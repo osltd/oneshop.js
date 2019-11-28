@@ -15,12 +15,12 @@ class Product extends Role {
     /**
      * Retrieve your products
      * @param {Object} query
-     * @param {String} query[locale]
-     * @param {String} query[ids]
+     * @param {String} query[locale] // locale : 'en_US' | 'zh_HK' | 'zh_CN' | etc.
+     * @param {String} query[ids]   // product id(s)
      * @param {String} query[tags]
-     * @param {String} query[status]
+     * @param {String} query[status] // 'VIRTUAL' | 'PHYSICAL'
      * @param {String} query[keywords]
-     * @param {String} query[ordering]
+     * @param {String} query[ordering] // 'asc' (acending) | 'desc' (descending)
      * 
     * Examples:
      * 
@@ -44,12 +44,12 @@ class Product extends Role {
     /**
      * Create product
      * @param {Object} context 
-     * @param {Object} context[locales] (Optional)
+     * @param {Object} context[locales] (Optional) // locale : 'en_US' | 'zh_HK' | 'zh_CN' | etc.
      * @param {Float} context[price] (Required)
      * @param {String} context[tags] (Optional)
      * @param {String} context[shops] (Optional)
      * @param {String} context[media] (Optional)
-     * @param {String} context[type] (Required)
+     * @param {String} context[type] (Required) // 'VIRTUAL' | 'PHYSICAL'
      * @param {Float} context[weight] (Required)
      * @param {Float} context[width] (Required)
      * @param {Float} context[height] (Required)
@@ -111,12 +111,12 @@ class Product extends Role {
      * Update product by id
      * @param {Integer} productId
      * @param {Object} context 
-     * @param {Object} context[locales] (Optional)
+     * @param {Object} context[locales] (Optional) // locale : 'en_US' | 'zh_HK' | 'zh_CN' | etc.
      * @param {Float} context[price] (Optional)
      * @param {String} context[tags] (Optional)
      * @param {String} context[shops] (Optional)
      * @param {String} context[media] (Optional)
-     * @param {String} context[type] (Optional)
+     * @param {String} context[type] (Optional) // 'VIRTUAL' | 'PHYSICAL'
      * @param {Float} context[weight] (Optional)
      * @param {Float} context[width] (Optional)
      * @param {Float} context[height] (Optional)

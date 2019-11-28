@@ -15,8 +15,8 @@ class Voucher extends Role {
      * Retrieve mall vouchers
      * @param {Object} query
      * @param {String} query[codes] (Required)
-     * @param {String} query[malls]
-     * @param {String} query[shops]
+     * @param {String} query[malls] // mall id(s)
+     * @param {String} query[shops] // shop id(s)
      * @param {Integer} query[page]
      * 
      * Examples:

@@ -27,7 +27,7 @@ class Notification extends Role {
 
     /**
      * Update notification
-     * @param {String} status[active][deleted]
+     * @param {String} status // value only be 'active' or 'deleted'
      * 
      * Examples:
      * 
