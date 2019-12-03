@@ -32,7 +32,6 @@ class Payment extends Role {
      *  }],
      * 
      *  contact:{
-     *      address:'1/F, Camelpaint building, block 1, 62 Hoi Yuen Road, Kwun Tong, Hong Kong',
      *      email:'rocks@oneshop.team',
      *      first_name:'One',
      *      last_name:'Shop',
@@ -45,9 +44,12 @@ class Payment extends Role {
      *      exp_date:'01/23'
      *  },
      * 
-     *  coupon:'ONESHOP10OFF',note:'Please delivery within two days later',
+     *  coupon:'ONESHOP10OFF',
+     *  note:'Please delivery within two days later',
      * 
-     *  shipping:'1/F, Camelpaint building, block 1, 62 Hoi Yuen Road, Kwun Tong, Hong Kong'
+     *  shipping:{
+     *          address : '1/F, Camelpaint building, block 1, 62 Hoi Yuen Road, Kwun Tong, Hong Kong'
+     *      }
      * 
      *  })
      * 
@@ -60,7 +62,7 @@ class Payment extends Role {
     /**
      * Retrieve payment history
      * @param {Object} query
-     * @param {String} query[merchants] // merchant id
+     * @param {String} query[merchants] // merchant id (shop id)
      * @param {Integer} query[page]
      * 
      * Examples:

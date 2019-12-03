@@ -15,7 +15,7 @@ class Message extends Role {
 
     /**
      * 
-     * Get chats of your shop from consumers
+     * Get chats of your shop starts from consumers
      * 
      * @param {Object} query
      * @param {Integer} query[page]

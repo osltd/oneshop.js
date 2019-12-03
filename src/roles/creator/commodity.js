@@ -15,6 +15,7 @@ class Backlog extends Role {
     /**
      * Retrieve user's products
      * @param {Object} query
+     * @param {String} query[page]
      * @param {String} query[ids]
      * @param {String} query[locale]
      * @param {String} query[type]
@@ -28,11 +29,11 @@ class Backlog extends Role {
      * 
      *  // Retrieve ALL products
      * 
-     *  os.creator.commodity.get() 
+     *  os.creator.commodity.get({page:'1'}) 
      * 
      *  // Retrieve some products with filtering
      * 
-     *  os.creator.commodity.get({ids:'1763,2845,411',locate:'zh_HK',type:'PHYSICAL',shop:'4333',keywords:'love',permission:'VIEWER'}) 
+     *  os.creator.commodity.get({ids:'1763,2845,411',locate:'zh_HK',type:'PHYSICAL',shop:'4333',keywords:'love',permission:'VIEWER',page:'1'}) 
      * 
      */
     get(query){

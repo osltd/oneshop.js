@@ -12,7 +12,7 @@ class Message extends Role {
     }
 
     /**
-     * Retrieve enquiries from shops
+     * Retrieve enquiries whom starts from shops
      * @param {Object} query 
      * 
      * Examples:
