@@ -15,8 +15,20 @@ class Coupon extends Role {
      * Retrieve your shops coupons
      * 
      * @param {Object} query
-     * @param {String} query[ids]
-     * @param {Integer} query[page]
+     * @param {String} query[ids] // coupon id
+     * @param {String} query[page]
+     * 
+     * Examples:
+     * 
+     *  // ALL filtering value are optional
+     * 
+     *  // Get ALL coupons form your own shop
+     * 
+     *  os.merchant.coupon.get({page:'1'}) 
+     * 
+     *  // Get coupons with filters from your own shop
+     *  os.merchant.coupon.get({ids:'232,543',page:'1'}) 
+     * 
      */
     get(query){
         return this.request.get(`${this.baseURL}/coupons`, query || {}, this.credentials);
@@ -117,7 +129,6 @@ class Coupon extends Role {
     /**
      * 
      * Retrieve usage of specific coupon
-     * 
      * @param {Integer} couponId 
      * 
      * Examples:

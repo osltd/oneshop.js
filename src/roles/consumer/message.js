@@ -14,16 +14,18 @@ class Message extends Role {
     /**
      * Retrieve enquiries whom starts from shops
      * @param {Object} query 
+     * @param {Object} query
+     * @param {String} query[page]
      * 
      * Examples:
      * 
      *  // get ALL enquiries list :
      * 
-     *  os.consumer.message.enquiries()  
+     *  os.consumer.message.enquiries({page:'1'})  
      * 
      *  // get enquiries list with specified enquiry ids :
      * 
-     *  os.consumer.message.enquiries({ids:'2123,2125,2127'})
+     *  os.consumer.message.enquiries({ids:'2123,2125,2127',page:'1'})
      * 
      */
     enquiries(query){
@@ -36,11 +38,11 @@ class Message extends Role {
      * Retrieve messages between a shop and consumer
      * @param {Integer} shopId 
      * @param {Object} query
-     * @param {Integer} query[page]
+     * @param {String} query[page]
      * 
      * Examples:
      * 
-     *  os.consumer.message.get('2123',{page:1})
+     *  os.consumer.message.get('2123',{page:'1'})
      * 
      */
     get(shopId, query){

@@ -14,10 +14,12 @@ class Backlog extends Role {
 
     /**
      * Retrieve backlog's of user
+     * @param {Object} query 
+     * @param {String} query[page]
      * 
      * Examples:
      * 
-     *  os.creator.backlog.get()
+     *  os.creator.backlog.get({page:'1'})
      * 
      */
     get(query){

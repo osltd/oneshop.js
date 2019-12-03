@@ -15,6 +15,7 @@ class Business extends Role {
     /**
      * Retrieve shops you own
      * @param {Object} query 
+     * @param {String} query[page]
      * @param {String} query[ids]  // shop id(s)
      * @param {String} query[tags]
      * 
@@ -22,19 +23,19 @@ class Business extends Role {
      * 
      *  // get ALL shops you own
      * 
-     *  os.creator.business.get()
+     *  os.creator.business.get({page:'1'})
      * 
      *  // get shops with specified shop ids
      * 
-     *  os.creator.business.get({ids:'123,423,6653'})
+     *  os.creator.business.get({ids:'123,423,6653',page:'1'})
      * 
      *  // get shops with specified tags
      * 
-     *  os.creator.business.get({tags:'love,only'})
+     *  os.creator.business.get({tags:'love,only',page:'1'})
      * 
      *  // get specified shop ids and tags you own
      * 
-     *  os.creator.business.get({ids:'123,423,6653',tags:'love,only'})
+     *  os.creator.business.get({ids:'123,423,6653',tags:'love,only',page:'1'})
      * 
      */
     get(query){
