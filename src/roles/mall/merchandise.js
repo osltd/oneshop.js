@@ -20,7 +20,7 @@ class Merchandise extends Role {
      * @param {String} query[tags]
      * @param {String} query[locale] // locale : 'en_US' | 'zh_HK' | 'zh_CN' | etc.
      * @param {String} query[keywords]
-     * @param {Integer} query[page]
+     * @param {String} query[page]
      * 
      * Examples:
      * 
@@ -28,12 +28,12 @@ class Merchandise extends Role {
      * 
      *  // Get ALL merchandises form your own mall
      * 
-     *  os.mall.merchandise.get({page:1}) 
+     *  os.mall.merchandise.get({page:'1'}) 
      * 
      *  // Get specified merchandises with filters form your own mall
      * 
      *  os.mall.merchandise.get({ids:'43,54,123',shops:'443,121,93',skus:'tk_1',tags:'tag1,tag2'
-     *  locale:'en_US',keyword:'love',page:1}) 
+     *  locale:'en_US',keyword:'love',page:'1'}) 
      * 
      */
     get(query){

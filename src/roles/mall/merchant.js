@@ -14,6 +14,7 @@ class Merchant extends Role {
     /**
      * Retrieve merchant profiles (Deprecated soon)
      * @param {Object} query
+     * @param {String} query[page]
      * @param {String} query[any_profile_field] // custom values you want e.g query[gender], query[phone]
      * 
      * Examples:
@@ -22,10 +23,10 @@ class Merchant extends Role {
      * 
      *  // Get ALL merchants form your own mall
      * 
-     *  os.mall.merchant.get({page:1}) 
+     *  os.mall.merchant.get({page:'1'}) 
      * 
      *  // Get specified merchants with filters (custom key value from profile) form your own mall
-     *  os.mall.merchant.get({gender:'M',page:1}) 
+     *  os.mall.merchant.get({gender:'M',page:'1'}) 
      * 
      */
     get(query){

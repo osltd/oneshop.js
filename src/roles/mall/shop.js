@@ -28,9 +28,10 @@ class Shop extends Role {
 
     /**
      * Retrieve mall's shops
-     * @param {String} domain // shop domain
-     * @param {String} ids // shop id(s)
-     * @param {Integer} page
+     * @param {Object} query
+     * @param {String} query[domain] // shop domain
+     * @param {String} query[ids] // shop id(s)
+     * @param {String} query[page]
      * 
      * Examples:
      * 
@@ -38,11 +39,11 @@ class Shop extends Role {
      * 
      *  // Get ALL shops form your own mall
      * 
-     *  os.mall.shop.get({page:1}) 
+     *  os.mall.shop.get({page:'1'}) 
      * 
      *  // Get shops with filters from your own mall
      * 
-     *  os.mall.shop.get({ids:'5243,2233,211',domain:'oneshop.cloud',page:1})
+     *  os.mall.shop.get({ids:'5243,2233,211',domain:'oneshop.cloud',page:'1'})
      * 
      */
     get(query){

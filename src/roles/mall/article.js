@@ -19,7 +19,7 @@ class Article extends Role {
      * @param {String} query[tags]
      * @param {String} query[shops]
      * @param {String} query[statuses] // 'PUBLISHED' | 'SCHEDULE'
-     * @param {Integer} query[page]
+     * @param {String} query[page]
      * 
      * Examples:
      * 
@@ -27,12 +27,12 @@ class Article extends Role {
      * 
      *  // Get ALL articles form your own mall
      * 
-     *  os.mall.article.get() 
+     *  os.mall.article.get({page:'1'}) 
      * 
      *  // Get articles with filters from your own mall
      * 
      *  os.mall.article.get({ids:'1743,293,6652',keywords:'love',tags:'tag1,tag2',
-     *  shops:'522',statuses:'PUBLISHED',page:1})
+     *  shops:'522',statuses:'PUBLISHED',page:'1'})
      * 
      */
     get(query){

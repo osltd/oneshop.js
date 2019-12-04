@@ -17,7 +17,7 @@ class Voucher extends Role {
      * @param {String} query[codes] (Required)
      * @param {String} query[malls] // mall id(s)
      * @param {String} query[shops] // shop id(s)
-     * @param {Integer} query[page]
+     * @param {String} query[page]
      * 
      * Examples:
      * 
@@ -25,11 +25,11 @@ class Voucher extends Role {
      * 
      *  // Get ALL vouchers (coupons) form all mall
      * 
-     *  os.mall.voucher.get({codes:'ONESHOP10OFF',page:1}) 
+     *  os.mall.voucher.get({codes:'ONESHOP10OFF',page:'1'}) 
      * 
      *  // Get vouchers (coupons) with filters from all mall
      * 
-     *  os.mall.voucher.get({malls:'321',shops:'533',codes:'ONESHOP10OFF',page:1})
+     *  os.mall.voucher.get({malls:'321',shops:'533',codes:'ONESHOP10OFF',page:'1'})
      * 
      */
     get(query){

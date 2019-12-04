@@ -49,7 +49,7 @@ class Consumer extends Role {
      * @param {Object} query
      * @param {String} query[email] 
      * @param {String} query[custom_profile_field] // custom values you want e.g profile[gender], profile[phone]
-     * @param {Integer} query[page]
+     * @param {String} query[page]
      * 
      * Examples:
      * 
@@ -57,11 +57,11 @@ class Consumer extends Role {
      * 
      *  // Get ALL consumers form your own mall
      * 
-     *  os.mall.consumer.get({page:1}) 
+     *  os.mall.consumer.get({page:'1'}) 
      * 
      *  // Get specified consumers with filters (custom key value from profile) form your own mall
      * 
-     *  os.mall.consumer.get({email:'test@oneshop.cloud',gender:'M',page:1}) 
+     *  os.mall.consumer.get({email:'test@oneshop.cloud',gender:'M',page:'1'}) 
      * 
      */
     get(query){
