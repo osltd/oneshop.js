@@ -15,6 +15,7 @@ class Mall extends Role {
     /**
      * Retrieve mall's own by you
      * @param {Object} query
+     * @param {String} query[page]
      * @param {String} query[ids] // mall id(s)
      * @param {String} query[keywords]
      * @param {String} query[tags]
@@ -25,10 +26,10 @@ class Mall extends Role {
      * 
      *  // Get ALL malls list.
      * 
-     *  os.creator.mall.get()
+     *  os.creator.mall.get({page:'1'})
      * 
      *  // Get specified malls with filters
-     *  os.creator.mall.get({ids:'12,45',keywords:'shop',tags:'tag1,tag2,tag3'})
+     *  os.creator.mall.get({ids:'12,45',keywords:'shop',tags:'tag1,tag2,tag3',page:'1'})
      * 
      */
     get(query){

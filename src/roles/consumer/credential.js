@@ -28,12 +28,20 @@ class Credential extends Role {
     /**
      * Retrieve credentials that have permission to access your account
      * @param {Object} query
+     * @param {String} query[page]
      * @param {String} query[ids]
      * @param {String} query[types]
      * @param {String} query[tokens]
      * 
      * Example:
-     *  os.consumer.credential.get({ids:'2123',tokens:'ab23424eced2ra349754ecc',types:'consumer'})
+     * 
+     *  // get ALL credential with page
+     * 
+     *  os.consumer.credential.get({page:'1'})
+     * 
+     *  // get specified credential with filtering value and page 
+     * 
+     *  os.consumer.credential.get({ids:'2123',tokens:'ab23424eced2ra349754ecc',types:'consumer',page:'1'})
      * 
      */
     get(query){
