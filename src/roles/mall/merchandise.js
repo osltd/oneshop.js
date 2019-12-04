@@ -15,7 +15,7 @@ class Merchandise extends Role {
      * Retrieve merchandises
      * @param {Object} query
      * @param {String} query[ids] // merchant id(s)
-     * @param {String} query[shops]
+     * @param {String} query[shops] // shop id(s)
      * @param {String} query[skus]
      * @param {String} query[tags]
      * @param {String} query[locale] // locale : 'en_US' | 'zh_HK' | 'zh_CN' | etc.
