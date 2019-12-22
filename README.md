@@ -1,6 +1,12 @@
 # Oneshop JavaScript SDK for Node
 Provides convenient way to access to the Oneshop API from both client-side and server-side JavaScript.
 
+
+[![Version](https://img.shields.io/npm/v/oneshop.svg)](https://www.npmjs.org/package/onehshop)
+[![Downloads](https://img.shields.io/npm/dm/oneshop.svg)](https://www.npmjs.com/package/oneshop)
+[![Try on RunKit](https://badge.runkitcdn.com/oneshop.svg)](https://runkit.com/npm/oneshop)
+<br/>
+
 ## Documentation
 See the [Oneshop Documentation](https://docs.oneshop.dev) for JavaScript SDK.
 
