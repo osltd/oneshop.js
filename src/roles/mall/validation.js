@@ -16,20 +16,32 @@ class Validation extends Role {
      * @param {Object} context
      * @param {Object} context[email]
      * @param {Object} context[phone]
-     * @param {String} type (Not use)
+     * @param {String} type // (value : CODE || LINK)
      * @param {Integer} shopId
      * 
      * Examples:
      * 
      * // create validation by either 'email' or 'phone'
      * 
+     * -------- Contain shopId
+     * 
      * // By 'email'
      * 
-     * os.mall.validation.create({email:'test@oneshop.cloud',532})
+     * os.mall.validation.create({email:'test@oneshop.cloud',type:'CODE',532})
      * 
      * // By 'phone'
      * 
-     * os.mall.validation.create({phone:'+85299887766',532})
+     * os.mall.validation.create({phone:'+85299887766',type:'LINK',532})
+     * 
+     * -------- Without shopId
+     * 
+     * // By 'email'
+     * 
+     * os.mall.validation.create({email:'test@oneshop.cloud',type:'LINK',nil})
+     * 
+     * // By 'phone'
+     * 
+     * os.mall.validation.create({phone:'+85299887766',type:'CODE',nil})
      * 
      */
     create(context, shopId){
