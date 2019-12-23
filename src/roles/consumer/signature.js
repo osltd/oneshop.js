@@ -14,11 +14,11 @@ class Signature extends Role {
     /**
      * Retrieve merchandises
      * @param {String} ids
-     * @param {String} extension
+     * @param {String} extension // (mime type: image/png, video/mp4, ...)
      * 
      * Examples:
      * 
-     *  os.consumeer.signature.create('ppts')
+     *  os.consumer.signature.create('video/mp4')
      * 
      */
     create(extension){
