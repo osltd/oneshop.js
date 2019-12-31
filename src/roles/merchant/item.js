@@ -37,7 +37,7 @@ class Item extends Role {
                  *  os.merchant.item.stock(532,'3c458765abed54564cdea').set(125)
                  * 
                  */
-                set: (amount) => this.request.put(`${this.baseURL}/items/${itemId}/variants/${variantId}/stock`, {stock : amount}, this.credentials)
+                set: (amount) => this.request.put(`${this.baseURL}/items/${itemId}/variants/${variantId}`, {stock : amount}, this.credentials)
             };
         }
 
