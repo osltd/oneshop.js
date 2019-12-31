@@ -23,7 +23,7 @@ class Voucher extends Role {
      * 
      *  // ALL filtering value are optional (except'codes' value)
      * 
-     *  // Get ALL vouchers (coupons) form all mall
+     *  // Get ALL vouchers (coupons) from all mall
      * 
      *  os.mall.voucher.get({codes:'ONESHOP10OFF',page:'1'}) 
      * 
