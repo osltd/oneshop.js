@@ -1,6 +1,6 @@
 {
   "name": "oneshop",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Oneshop Javascript SDK",
   "main": "index.js",
   "scripts": {
