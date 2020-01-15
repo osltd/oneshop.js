@@ -44,8 +44,8 @@ class Payment extends Role {
      *      exp_date:'01/23'
      *  },
      * 
-     *  coupon:'ONESHOP10OFF',
-     *  note:'Please delivery within two days later',
+     *  coupons:'ONESHOP10OFF',
+     *  notes:'Please delivery within two days later',
      * 
      *  shipping:{
      *          address : '1/F, Camelpaint building, block 1, 62 Hoi Yuen Road, Kwun Tong, Hong Kong'
