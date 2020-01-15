@@ -14,12 +14,10 @@ class Notification extends Role {
     
     /**
      * Fetch unhandled notifications
-     * @param {Object} query
-     * @param {Integer} query[page]
-     * 
+     *
      * Examples:
      * 
-     *  os.consumer.notification.get({page:1})
+     *  os.consumer.notification.get()
      * 
      */
     get(){
