@@ -26,7 +26,7 @@ class Order extends Role {
      *  os.mall.order.create({
      *      coupons:'ONESHOP10OFF',
      *      notes:'Please check the package pack well.',
-     *      shipping:'1/F Block 1, Camcam Paint Building, 62 Hoi Yuen Road, Kwun Tong',
+     *      shipping:{address : '1/F Block 1, Camcam Paint Building, 62 Hoi Yuen Road, Kwun Tong'},
      *      items:[{
      *          id:625,
      *          product:{
