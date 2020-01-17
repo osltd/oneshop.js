@@ -12,7 +12,7 @@ class Shipping extends Role {
     }
 
     /**
-     * Retrieve merchandises
+     * Retrieve shipping rate
      * @param {Array} items
      * @param {String} address
      * 
@@ -20,19 +20,7 @@ class Shipping extends Role {
      * 
      *  os.mall.shipping.rate([{
      *          id:625,
-     *          product:{
-     *              id:'cad28564dee135464dab',
-     *              name:'Banana'
-     *          },
-     *          sku:'tk_1',
-     *          option:'color:Color,yellow:Yellow',
-     *          quantity:5,
-     *          photos:[ 
-     *              { 
-     *                  url:'https://assets.oneshop.cloud/..png',
-     *                  ext:'png'
-     *              }
-     *          ]
+     *          qty:5,
      *      }], 'Rm 101, Blk 2, Good Buinding, Kwun Tong, KLN, HK')
      * 
      */
@@ -46,13 +34,7 @@ class Shipping extends Role {
      * 
      * Examples:
      * 
-     *  os.mall.shipping.timeslot({
-     *              id:254,
-     *              name:'OneShop Express',
-     *              total_charge:5,
-     *              remarks:'Please sign first when get the delivery',
-     *              can_pickup:true
-     *          })
+     *  os.mall.shipping.timeslot("80h2480-29gh82gh-13081y4f-98h21")
      * 
      */
     timeslot(courier){
