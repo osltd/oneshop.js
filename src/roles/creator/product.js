@@ -32,7 +32,7 @@ class Product extends Role {
      * 
      *  // get specified products list with filters
      * 
-     *  os.creator.product.get({locate:'en_US',ids:'4342,552,3433',tags:'tag1,tag2',
+     *  os.creator.product.get({locale:'en_US',ids:'4342,552,3433',tags:'tag1,tag2',
      *  status:'PUBLIC',keyword:'love',ordering:'desc'}) 
      * 
      * 
