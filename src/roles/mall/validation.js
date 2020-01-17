@@ -27,21 +27,21 @@ class Validation extends Role {
      * 
      * // By 'email'
      * 
-     * os.mall.validation.create({email:'test@oneshop.cloud',type:'CODE',532})
+     * os.mall.validation.create({email:'test@oneshop.cloud',type:'CODE'},532)
      * 
      * // By 'phone'
      * 
-     * os.mall.validation.create({phone:'+85299887766',type:'LINK',532})
+     * os.mall.validation.create({phone:'+85299887766',type:'LINK'},532)
      * 
      * -------- Without shopId
      * 
      * // By 'email'
      * 
-     * os.mall.validation.create({email:'test@oneshop.cloud',type:'LINK',nil})
+     * os.mall.validation.create({email:'test@oneshop.cloud',type:'LINK'},null)
      * 
      * // By 'phone'
      * 
-     * os.mall.validation.create({phone:'+85299887766',type:'CODE',nil})
+     * os.mall.validation.create({phone:'+85299887766',type:'CODE'},null)
      * 
      */
     create(context, shopId){
