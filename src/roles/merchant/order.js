@@ -9,7 +9,7 @@ class Order extends Role {
             user : credentials.user || '',
             pass : credentials.pass || '',
         };
-        this.shipment = {
+        this.shipment(orderId) = {
             /**
              * Retrieve shipment of specific order
              * 
@@ -17,10 +17,10 @@ class Order extends Role {
              * 
              * Examples:
              * 
-             *  os.merchant.order.shipment.get('ac3264cd24eedc2424cce')
+             *  os.merchant.order.shipment('ac3264cd24eedc2424cce').get()
              * 
              */
-            get : (orderId) => this.request.get(`${this.baseURL}/orders/${orderId}/shipments`, {}, this.credentials),
+            get : () => this.request.get(`${this.baseURL}/orders/${orderId}/shipments`, {}, this.credentials),
             /**
              * Arrange pickup time
              * 
@@ -31,7 +31,7 @@ class Order extends Role {
              * 
              * Examples:
              * 
-             *  os.merchant.order.shipment.pickup({preferred_date:'2019-10-23',
+             *  os.merchant.order.shipment('ac3264cd24eedc2424cce').pickup(234121,{preferred_date:'2019-10-23',
              *  preferred_min_time:'2019-10-23T10:00',preferred_max_time:'2019-10-23T18:00'})
              * 
              */
