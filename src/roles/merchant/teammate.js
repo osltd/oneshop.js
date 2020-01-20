@@ -47,7 +47,7 @@ class Teammate extends Role {
      * 
      * Examples:
      * 
-     *  os.merchant.teammate.add({username:'OneShopUser',scope:'ADMIN'})
+     *  os.merchant.teammate.add({username:'OneShopUser@oneshop.cloud',scope:'ADMIN'})
      * 
      */
     add(context){
