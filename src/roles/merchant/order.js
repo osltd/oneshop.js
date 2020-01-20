@@ -32,7 +32,7 @@ class Order extends Role {
              * Examples:
              * 
              *  os.merchant.order.shipment.pickup({preferred_date:'2019-10-23',
-             *  preferred_min_time:'10:00:00',preferred_max_time:'18:00:00'})
+             *  preferred_min_time:'2019-10-23T10:00',preferred_max_time:'2019-10-23T18:00'})
              * 
              */
             pickup: (shipmentId, context) => this.request.put(`${this.baseURL}/orders/${orderId}/shipments/${shipmentId}`, context || {}, this.credentials),
