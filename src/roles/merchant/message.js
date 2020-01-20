@@ -57,7 +57,7 @@ class Message extends Role {
      * 
      * Examples:
      * 
-     *  os.merchant.message.get(3234,{context:'Hi, How are you?',
+     *  os.merchant.message.send(3234,{context:'Hi, How are you?',
      *  attachment:'https://asset.oneshop.cloud/..png,https://asset.oneshop.cloud/..png'})
      * 
      */
