@@ -31,7 +31,7 @@ class Order extends Role {
              * 
              * Examples:
              * 
-             *  os.merchant.order.shipment('ac3264cd24eedc2424cce').pickup(234121,{preferred_date:'2019-10-23',
+             *  os.merchant.order.shipment('ac3264cd24eedc2424cce').pickup('234121',{preferred_date:'2019-10-23',
              *  preferred_min_time:'2019-10-23T10:00',preferred_max_time:'2019-10-23T18:00'})
              * 
              */
