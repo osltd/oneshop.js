@@ -28,20 +28,9 @@ class Order extends Role {
      *      notes:'Please check the package pack well.',
      *      shipping:{address : '1/F Block 1, Camcam Paint Building, 62 Hoi Yuen Road, Kwun Tong'},
      *      items:[{
-     *          id:625,
-     *          product:{
-     *              id:'cad28564dee135464dab',
-     *              name:'Banana'
-     *          },
-     *          sku:'tk_1',
-     *          option:'color:Color,yellow:Yellow',
-     *          quantity:5,
-     *          photos:[ 
-     *              { 
-     *                  url:'https://assets.oneshop.cloud/..png',
-     *                  ext:'png'
-     *              }
-     *          ]
+     *          id:'agffdg345crth6y3t2f3t4g53g2tf2f4hc',
+     *          qty:5,
+     *          courier:'80h2480-29gh82gh-13081y4f-98h21'
      *      }],
      *      contact:{
      *          email:'test@oneshop.cloud',
