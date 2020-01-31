@@ -60,7 +60,7 @@ class Theme extends Role {
      * 
      */
     create(themeId){
-        return this.request.get(`${this.baseURL}/themes`,  themeId ? { sample:themeId } : {}, this.credentials);
+        return this.request.post(`${this.baseURL}/themes`,  themeId ? { sample:themeId } : {}, this.credentials);
     }
 
 
